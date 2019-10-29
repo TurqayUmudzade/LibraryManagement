@@ -1,0 +1,15 @@
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\EntityFramework.dll
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\EntityFramework.xml
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csprojAssemblyReference.cache
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CopyComplete
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.first.resources
+C:\Users\Turqay\Desktop\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.LoginForm.resources
