@@ -18,18 +18,22 @@ namespace LibraryManagement
     {
         //private readonly AdminServices _adminServices;
         private readonly AdminContext _adminContext;
+       // private User _selectedUser;
         public LoginForm()
         {
             InitializeComponent();
+
             _adminContext = new AdminContext();
+
+
         }
 
         private void BTN_SignIn_Click(object sender, EventArgs e)
         {
-            Login(LoginUsernameTB.Text, LoginPasswordTb.Text);
+            LoginUser(LoginUsernameTB.Text, LoginPasswordTb.Text);
         }
 
-        public void Login(string username, string password)
+        public void LoginAdmin(string username, string password)
         {
             List<Admin> adminList = new List<Admin>();
             adminList = _adminContext.Admins.ToList();
@@ -40,8 +44,32 @@ namespace LibraryManagement
                 {
                     MessageBox.Show("Welcome");
                     this.Hide();
-                    BookStore bookStore = new BookStore();
+                    BookStoreForm bookStore = new BookStoreForm(admin.AdminID);
                     bookStore.Show();
+                    return;
+                }
+            }
+            MessageBox.Show("No user found");
+
+        }
+        public void LoginUser(string username, string password)
+        {
+            List<User> userList = new List<User>();
+            userList = _adminContext.Users.ToList();
+
+            foreach (User user in userList)
+            {
+                if (username == user.Username && password == user.Password)
+                {
+                    
+
+                    MessageBox.Show("Welcome");
+                    this.Hide();
+
+                    BookStoreForm bookStore = new BookStoreForm(user.UserID);
+                    bookStore.Show();
+
+
                     return;
                 }
             }

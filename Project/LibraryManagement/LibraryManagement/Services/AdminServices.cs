@@ -11,7 +11,7 @@ namespace LibraryManagement.Services
 {
     class AdminServices
     {
-        public bool Login(string username, string password)
+       /* public bool Login(string username, string password)
         {
             if (true)
             {
@@ -22,6 +22,6 @@ namespace LibraryManagement.Services
             {
                 return false;
             }
-        }
+        }*/
     }
 }

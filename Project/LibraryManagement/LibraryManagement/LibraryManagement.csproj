@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AdminContext.cs" />
-    <Compile Include="Forms\BookStore.cs">
+    <Compile Include="Forms\BookStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BookStore.Designer.cs">
-      <DependentUpon>BookStore.cs</DependentUpon>
+    <Compile Include="Forms\BookStoreForm.Designer.cs">
+      <DependentUpon>BookStoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -69,20 +69,99 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReturnsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReturnsForm.Designer.cs">
+      <DependentUpon>ReturnsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201910290558066_first.cs" />
     <Compile Include="Migrations\201910290558066_first.designer.cs">
       <DependentUpon>201910290558066_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910290927266_Books.cs" />
+    <Compile Include="Migrations\201910290927266_Books.designer.cs">
+      <DependentUpon>201910290927266_Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291055375_user.cs" />
+    <Compile Include="Migrations\201910291055375_user.designer.cs">
+      <DependentUpon>201910291055375_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291103301_userupdate.cs" />
+    <Compile Include="Migrations\201910291103301_userupdate.designer.cs">
+      <DependentUpon>201910291103301_userupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291111126_userupdate2.cs" />
+    <Compile Include="Migrations\201910291111126_userupdate2.designer.cs">
+      <DependentUpon>201910291111126_userupdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910291112589_userupdate3.cs" />
+    <Compile Include="Migrations\201910291112589_userupdate3.designer.cs">
+      <DependentUpon>201910291112589_userupdate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300715276_DatabaseChange.cs" />
+    <Compile Include="Migrations\201910300715276_DatabaseChange.designer.cs">
+      <DependentUpon>201910300715276_DatabaseChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300716532_DatabaseChange1.cs" />
+    <Compile Include="Migrations\201910300716532_DatabaseChange1.designer.cs">
+      <DependentUpon>201910300716532_DatabaseChange1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300720143_DatabaseChange2.cs" />
+    <Compile Include="Migrations\201910300720143_DatabaseChange2.designer.cs">
+      <DependentUpon>201910300720143_DatabaseChange2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300724497_DatabaseChange21.cs" />
+    <Compile Include="Migrations\201910300724497_DatabaseChange21.designer.cs">
+      <DependentUpon>201910300724497_DatabaseChange21.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Management.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserPurchaes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminServices.cs" />
+    <EmbeddedResource Include="Forms\BookStoreForm.resx">
+      <DependentUpon>BookStoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReturnsForm.resx">
+      <DependentUpon>ReturnsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910290558066_first.resx">
       <DependentUpon>201910290558066_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910290927266_Books.resx">
+      <DependentUpon>201910290927266_Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291055375_user.resx">
+      <DependentUpon>201910291055375_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291103301_userupdate.resx">
+      <DependentUpon>201910291103301_userupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291111126_userupdate2.resx">
+      <DependentUpon>201910291111126_userupdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910291112589_userupdate3.resx">
+      <DependentUpon>201910291112589_userupdate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300715276_DatabaseChange.resx">
+      <DependentUpon>201910300715276_DatabaseChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300716532_DatabaseChange1.resx">
+      <DependentUpon>201910300716532_DatabaseChange1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300720143_DatabaseChange2.resx">
+      <DependentUpon>201910300720143_DatabaseChange2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300724497_DatabaseChange21.resx">
+      <DependentUpon>201910300724497_DatabaseChange21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
