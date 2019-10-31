@@ -7,13 +7,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryManagement.Models
 {
-    class Management
+    public class Management
     {
         [Key]
         public int OrderID { get; set; }
 
         [Required]
-        public User Username { get; set; }
+        public User User { get; set; }
 
         [Required]
         public float Money { get; set; }

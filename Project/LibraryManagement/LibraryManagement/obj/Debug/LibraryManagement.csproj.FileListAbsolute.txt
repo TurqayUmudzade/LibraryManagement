@@ -38,3 +38,6 @@ C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\ob
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.DatabaseChange1.resources
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.DatabaseChange2.resources
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.DatabaseChange21.resources
+C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.ReturnsForm.resources
+C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.usernametouser.resources
+C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.BookCrudForm.resources

@@ -29,7 +29,7 @@ namespace LibraryManagement.Forms
             _selectedUser = new User();
           
 
-           //_adminContext = new AdminContext();
+           _adminContext = new AdminContext();
 
             _selectedUser = _adminContext.Users.Find(userID);
 
@@ -93,7 +93,7 @@ namespace LibraryManagement.Forms
                 //Creates management object
                 Management management = new Management
                 {
-                    Username = user,
+                    User = user,
                     BookReturnDate = dateTimePicker1.Value.Date,
                     Book = book,
                     Money = book.bookPrice
@@ -117,6 +117,7 @@ namespace LibraryManagement.Forms
         {
             this.Hide();
             ReturnsForm returnsForm = new ReturnsForm(_selectedUser.UserID);
+            returnsForm.Show();
         }
     }
 }

@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AdminContext.cs" />
+    <Compile Include="Forms\BookCrudForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookCrudForm.Designer.cs">
+      <DependentUpon>BookCrudForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookStoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,15 +121,21 @@
     <Compile Include="Migrations\201910300724497_DatabaseChange21.designer.cs">
       <DependentUpon>201910300724497_DatabaseChange21.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910301750043_usernametouser.cs" />
+    <Compile Include="Migrations\201910301750043_usernametouser.designer.cs">
+      <DependentUpon>201910301750043_usernametouser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Management.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserPurchaes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminServices.cs" />
+    <EmbeddedResource Include="Forms\BookCrudForm.resx">
+      <DependentUpon>BookCrudForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookStoreForm.resx">
       <DependentUpon>BookStoreForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910300724497_DatabaseChange21.resx">
       <DependentUpon>201910300724497_DatabaseChange21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910301750043_usernametouser.resx">
+      <DependentUpon>201910301750043_usernametouser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
