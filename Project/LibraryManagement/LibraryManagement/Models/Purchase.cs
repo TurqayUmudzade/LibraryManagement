@@ -7,26 +7,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryManagement.Models
 {
-    public class Management
+    class Purchase
     {
         [Key]
-        public int OrderID { get; set; }
+        public int PurchaseID { get; set; }
 
         [Required]
-        public User User { get; set; }
+        public Management Management { get; set; }
 
         [Required]
-        public Book Book { get; set; }
+        public float Money { get; set; }
 
         [Required]
-        public System.Nullable<DateTime> BookReturnDate { get; set; }
-        [Required]
-        public bool returned { get; set; }
-
-
-
-
-
-
+        public System.Nullable<DateTime> BookReturnededDate { get; set; }
     }
 }

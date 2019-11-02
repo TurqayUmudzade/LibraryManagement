@@ -30,6 +30,8 @@ namespace LibraryManagement.Forms
     {
         private readonly AdminContext _adminContext;
         private User _selectedUser;
+        int _selectedOrderID = 0;
+        int _selectedRow = 0;
         public ReturnsForm(int id)
         {
             InitializeComponent();
@@ -38,16 +40,18 @@ namespace LibraryManagement.Forms
             _adminContext = new AdminContext();
             _selectedUser = _adminContext.Users.Find(id);
 
+            BtnConfirm.Enabled = false;
+            TbPrice.ReadOnly = true;
 
 
 
 
             List<Management> testlist = new List<Management>();
             //Shows list of purchaes
-            testlist = _adminContext.Managements.Include("User").Include("Book").Where(m => m.User.UserID == _selectedUser.UserID).ToList();
+            testlist = _adminContext.Managements.Include("User").Include("Book").Where(m => m.User.UserID == _selectedUser.UserID).Where(m => m.returned == false).ToList();
             foreach (var item in testlist)
             {
-                DgvMyPurchaes.Rows.Add(item.OrderID, item.Book.bookName, item.Money, item.BookReturnDate);
+                DgvMyPurchaes.Rows.Add(item.OrderID, item.Book.bookName, item.Book.bookPrice, item.BookReturnDate);
             }
         }
 
@@ -67,19 +71,59 @@ namespace LibraryManagement.Forms
 
         private void DgvMyPurchaes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Shows ReturnPrice of selected Book 
             TbPrice.Text = Payment((DateTime)DgvMyPurchaes.Rows[e.RowIndex].Cells[3].Value, (float)DgvMyPurchaes.Rows[e.RowIndex].Cells[2].Value).ToString();
-          
+            BtnConfirm.Enabled = true;
+            _selectedOrderID = (int)DgvMyPurchaes.Rows[e.RowIndex].Cells[0].Value;
+            _selectedRow = e.RowIndex;
         }
 
+        //Total Price to ReturnAll
         private void BtnPay_Click(object sender, EventArgs e)
         {
             float sum = 0;
-            
-            foreach (DataGridViewRow dr in DgvMyPurchaes.Rows) {
-             
-                sum += Payment((DateTime)dr.Cells[3].Value,(float) dr.Cells[2].Value);
+            BtnConfirm.Enabled = true;
+
+            foreach (DataGridViewRow dr in DgvMyPurchaes.Rows)
+            {
+                sum += Payment((DateTime)dr.Cells[3].Value, (float)dr.Cells[2].Value);
             }
-            TbPrice.Text = sum.ToString();
+            TBOverall.Text = sum.ToString();
+        }
+        //Confirm Return
+        private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = DateTime.Now;
+
+            Management management = new Management();
+            management = _adminContext.Managements.Find(_selectedOrderID);
+
+            Purchase purchase = new Purchase()
+            {
+                Money = Convert.ToSingle(TbPrice.Text),
+                BookReturnededDate = date,
+                Management = management
+            };
+
+
+
+            _adminContext.Purchases.Add(purchase);
+            management.returned = true;
+            _adminContext.SaveChanges();
+
+
+            MessageBox.Show("Purchase Completed");
+
+            DgvMyPurchaes.Rows.RemoveAt(_selectedRow);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BookStoreForm bookStoreForm = new BookStoreForm(_selectedUser.UserID);
+            bookStoreForm.Show();
         }
     }
 }

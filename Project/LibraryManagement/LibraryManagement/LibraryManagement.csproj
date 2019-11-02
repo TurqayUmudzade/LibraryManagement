@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AdminContext.cs" />
+    <Compile Include="Forms\AdminDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminDashboardForm.Designer.cs">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,14 +131,30 @@
     <Compile Include="Migrations\201910301750043_usernametouser.designer.cs">
       <DependentUpon>201910301750043_usernametouser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911020744538_purchaes.cs" />
+    <Compile Include="Migrations\201911020744538_purchaes.designer.cs">
+      <DependentUpon>201911020744538_purchaes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911020822408_EditedManagement.cs" />
+    <Compile Include="Migrations\201911020822408_EditedManagement.designer.cs">
+      <DependentUpon>201911020822408_EditedManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911020824011_EditedManagement1.cs" />
+    <Compile Include="Migrations\201911020824011_EditedManagement1.designer.cs">
+      <DependentUpon>201911020824011_EditedManagement1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Management.cs" />
+    <Compile Include="Models\Purchase.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminServices.cs" />
+    <EmbeddedResource Include="Forms\AdminDashboardForm.resx">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookCrudForm.resx">
       <DependentUpon>BookCrudForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +199,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910301750043_usernametouser.resx">
       <DependentUpon>201910301750043_usernametouser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020744538_purchaes.resx">
+      <DependentUpon>201911020744538_purchaes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020822408_EditedManagement.resx">
+      <DependentUpon>201911020822408_EditedManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020824011_EditedManagement1.resx">
+      <DependentUpon>201911020824011_EditedManagement1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

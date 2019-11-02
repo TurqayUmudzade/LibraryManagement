@@ -20,5 +20,7 @@ namespace LibraryManagement.DAL
         public DbSet<Book> Books { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Management> Managements { get; set; }
+
+        public DbSet<Purchase> Purchases { get; set; }
     }
 }

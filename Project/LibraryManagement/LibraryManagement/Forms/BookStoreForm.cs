@@ -27,13 +27,13 @@ namespace LibraryManagement.Forms
             BtnConfirm.Visible = false;
 
             _selectedUser = new User();
-          
 
-           _adminContext = new AdminContext();
+
+            _adminContext = new AdminContext();
 
             _selectedUser = _adminContext.Users.Find(userID);
 
-            UsernameLabel.Text= _selectedUser.Fullname;
+            UsernameLabel.Text = _selectedUser.Fullname;
 
             _adminContext = new AdminContext();
         }
@@ -89,14 +89,16 @@ namespace LibraryManagement.Forms
             {
                 //gets book from card row with BookID
                 book = new Book();
-               book = _adminContext.Books.Find(dr.Cells[0].Value);
+                book = _adminContext.Books.Find(dr.Cells[0].Value);
                 //Creates management object
                 Management management = new Management
                 {
                     User = user,
                     BookReturnDate = dateTimePicker1.Value.Date,
                     Book = book,
-                    Money = book.bookPrice
+                    returned = false
+
+                    // = book.bookPrice
                 };
 
                 _adminContext.Managements.Add(management);
