@@ -41,8 +41,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvTodaysRetuns
@@ -146,22 +151,53 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePickerEnd);
             this.groupBox1.Controls.Add(this.dateTimePickerStart);
             this.groupBox1.Location = new System.Drawing.Point(12, 371);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 179);
+            this.groupBox1.Size = new System.Drawing.Size(291, 355);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sales History";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 261);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 49);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(361, 382);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(899, 285);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.iconfinder_Excel_D_104853__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // AdminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1345, 562);
+            this.ClientSize = new System.Drawing.Size(1397, 759);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnLate);
             this.Controls.Add(this.BtnTomorrow);
@@ -172,6 +208,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,5 +229,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
