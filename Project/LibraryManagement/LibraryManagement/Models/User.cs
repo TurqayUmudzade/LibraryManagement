@@ -14,6 +14,8 @@ namespace LibraryManagement.Models
 
         public string Fullname { get; set; }
 
+        public string Phonenumber { get; set; }
+
         [Required]
         public string Username { get; set; }
 

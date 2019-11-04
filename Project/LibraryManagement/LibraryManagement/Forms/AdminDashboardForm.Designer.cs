@@ -42,11 +42,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvExel = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvTomorrow = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgvLate = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,21 +110,23 @@
             // 
             // BtnTodayR
             // 
-            this.BtnTodayR.Location = new System.Drawing.Point(229, 25);
+            this.BtnTodayR.Location = new System.Drawing.Point(21, 25);
             this.BtnTodayR.Name = "BtnTodayR";
             this.BtnTodayR.Size = new System.Drawing.Size(186, 46);
             this.BtnTodayR.TabIndex = 1;
             this.BtnTodayR.Text = "Today\'s Returns";
             this.BtnTodayR.UseVisualStyleBackColor = true;
+            this.BtnTodayR.Click += new System.EventHandler(this.BtnTodayR_Click);
             // 
             // BtnTomorrow
             // 
-            this.BtnTomorrow.Location = new System.Drawing.Point(12, 25);
+            this.BtnTomorrow.Location = new System.Drawing.Point(238, 25);
             this.BtnTomorrow.Name = "BtnTomorrow";
             this.BtnTomorrow.Size = new System.Drawing.Size(186, 46);
             this.BtnTomorrow.TabIndex = 2;
             this.BtnTomorrow.Text = "Tomorrows\'s Returns";
             this.BtnTomorrow.UseVisualStyleBackColor = true;
+            this.BtnTomorrow.Click += new System.EventHandler(this.BtnTomorrow_Click);
             // 
             // BtnLate
             // 
@@ -116,6 +136,7 @@
             this.BtnLate.TabIndex = 3;
             this.BtnLate.Text = "Late Returns";
             this.BtnLate.UseVisualStyleBackColor = true;
+            this.BtnLate.Click += new System.EventHandler(this.BtnLate_Click);
             // 
             // dateTimePickerStart
             // 
@@ -173,15 +194,109 @@
             this.button1.Text = "Export";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgvExel
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(361, 382);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(899, 285);
-            this.dataGridView1.TabIndex = 10;
+            this.DgvExel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvExel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvExel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Boo,
+            this.Column7,
+            this.Column8});
+            this.DgvExel.Location = new System.Drawing.Point(401, 382);
+            this.DgvExel.Name = "DgvExel";
+            this.DgvExel.RowHeadersWidth = 51;
+            this.DgvExel.RowTemplate.Height = 24;
+            this.DgvExel.Size = new System.Drawing.Size(605, 344);
+            this.DgvExel.TabIndex = 10;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "OrderID";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Book";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Boo
+            // 
+            this.Boo.HeaderText = "Price";
+            this.Boo.MinimumWidth = 6;
+            this.Boo.Name = "Boo";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Username";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Date";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
+            // DgvTomorrow
+            // 
+            this.DgvTomorrow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvTomorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTomorrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.DgvTomorrow.Location = new System.Drawing.Point(12, 99);
+            this.DgvTomorrow.Name = "DgvTomorrow";
+            this.DgvTomorrow.RowHeadersWidth = 51;
+            this.DgvTomorrow.RowTemplate.Height = 24;
+            this.DgvTomorrow.Size = new System.Drawing.Size(692, 241);
+            this.DgvTomorrow.TabIndex = 11;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "UserName";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "User Full Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Phonenumber";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Books Owned";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // DgvLate
+            // 
+            this.DgvLate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvLate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvLate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.DgvLate.Location = new System.Drawing.Point(12, 99);
+            this.DgvLate.Name = "DgvLate";
+            this.DgvLate.RowHeadersWidth = 51;
+            this.DgvLate.RowTemplate.Height = 24;
+            this.DgvLate.Size = new System.Drawing.Size(692, 241);
+            this.DgvLate.TabIndex = 12;
             // 
             // pictureBox1
             // 
@@ -192,12 +307,44 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "UserID";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "UserName";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "User Full Name";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Phonenumber";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Books Owned";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
             // AdminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 759);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DgvLate);
+            this.Controls.Add(this.DgvTomorrow);
+            this.Controls.Add(this.DgvExel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnLate);
             this.Controls.Add(this.BtnTomorrow);
@@ -208,7 +355,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -230,7 +379,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvExel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView DgvTomorrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView DgvLate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Boo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

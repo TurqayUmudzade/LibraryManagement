@@ -44,3 +44,5 @@ C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\ob
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.purchaes.resources
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.EditedManagement.resources
 C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.EditedManagement1.resources
+C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Forms.AdminDashboardForm.resources
+C:\Users\Turqay\Desktop\C#Project\Project\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Migrations.userphoneadded.resources

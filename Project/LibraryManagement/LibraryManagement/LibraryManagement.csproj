@@ -143,6 +143,10 @@
     <Compile Include="Migrations\201911020824011_EditedManagement1.designer.cs">
       <DependentUpon>201911020824011_EditedManagement1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911042133579_userphoneadded.cs" />
+    <Compile Include="Migrations\201911042133579_userphoneadded.designer.cs">
+      <DependentUpon>201911042133579_userphoneadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Book.cs" />
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911020824011_EditedManagement1.resx">
       <DependentUpon>201911020824011_EditedManagement1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911042133579_userphoneadded.resx">
+      <DependentUpon>201911042133579_userphoneadded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

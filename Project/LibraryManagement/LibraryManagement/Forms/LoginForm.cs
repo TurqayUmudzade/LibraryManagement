@@ -30,7 +30,9 @@ namespace LibraryManagement
 
         private void BTN_SignIn_Click(object sender, EventArgs e)
         {
+            LoginAdmin(LoginUsernameTB.Text, LoginPasswordTb.Text);
             LoginUser(LoginUsernameTB.Text, LoginPasswordTb.Text);
+            
         }
 
         public void LoginAdmin(string username, string password)
@@ -42,14 +44,15 @@ namespace LibraryManagement
             {
                 if (username == admin.Username && password == admin.Password)
                 {
-                    MessageBox.Show("Welcome");
+                    MessageBox.Show("Welcome Admin");
+
                     this.Hide();
-                    BookStoreForm bookStore = new BookStoreForm(admin.AdminID);
-                    bookStore.Show();
+                    AdminDashboardForm adminDashboard = new AdminDashboardForm();
+                    adminDashboard.Show();
                     return;
                 }
             }
-            MessageBox.Show("No user found");
+            
 
         }
         public void LoginUser(string username, string password)
@@ -63,7 +66,7 @@ namespace LibraryManagement
                 {
                     
 
-                    MessageBox.Show("Welcome");
+                    MessageBox.Show("Welcome " + user.Fullname);
                     this.Hide();
 
                     BookStoreForm bookStore = new BookStoreForm(user.UserID);
@@ -73,8 +76,7 @@ namespace LibraryManagement
                     return;
                 }
             }
-            MessageBox.Show("No user found");
-
+           // MessageBox.Show("No user found");
         }
     }
 }
