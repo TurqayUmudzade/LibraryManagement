@@ -26,39 +26,51 @@ namespace LibraryManagement.Forms
             DgvTodaysRetuns.Visible = true;
             DgvTomorrow.Visible = false;
             DgvLate.Visible = false;
-
+            //Today
             DateTime today = new DateTime();
             today = DateTime.Today;
 
+            List<Management> orderListToday = new List<Management>();
+            orderListToday = _adminContext.Managements.Include("User").Where(m => m.BookReturnDate == today).Distinct().ToList();
+
+            foreach (var item in orderListToday)
+            {
+                int books;
+                books = _adminContext.Managements.Where(m => m.User.UserID == item.User.UserID && m.returned == false).Count();
+                DgvTodaysRetuns.Rows.Add(item.User.UserID, item.User.Username, item.User.Fullname, item.User.Phonenumber, books);
+            }
+
+            //Tomorrow
             DateTime tomorrow = new DateTime();
             tomorrow = today.AddDays(1);
 
-            List<Management> orderListToday = new List<Management>();
-            orderListToday = _adminContext.Managements.Include("User").Where(m => m.BookReturnDate == today).ToList();
-
-            foreach (var item in orderListToday) {
-                DgvTodaysRetuns.Rows.Add(item.User.UserID,item.User.Username,item.User.Phonenumber);
-            }
-
             List<Management> orderListTmr = new List<Management>();
-            orderListTmr = _adminContext.Managements.Include("User").Where(m => m.BookReturnDate == tomorrow).ToList();
+            orderListTmr = _adminContext.Managements.Include("User").Where(m => m.BookReturnDate == tomorrow).Distinct().ToList();
 
             foreach (var item in orderListTmr)
             {
-                DgvTomorrow.Rows.Add(item.User.UserID, item.User.Username, item.User.Phonenumber);
+                int books;
+                books = _adminContext.Managements.Where(m => m.User.UserID == item.User.UserID && m.returned == false).Count();
+                DgvTomorrow.Rows.Add(item.User.UserID, item.User.Username, item.User.Fullname, item.User.Phonenumber, books);
+
+
             }
 
+            //Late
+            DateTime now = new DateTime();
+            now = DateTime.Now;
 
+            List<Management> orderListLate = new List<Management>();
+            orderListLate = _adminContext.Managements.Include("User").Where(m => m.BookReturnDate < now).Distinct().ToList();
 
-            /* List<User> userList = new List<User>();
-             userList = _adminContext.Users.ToList();
+            foreach (var item in orderListLate)
+            {
+                int books;
+                books = _adminContext.Managements.Where(m => m.User.UserID == item.User.UserID && m.returned == false).Count();
+                DgvLate.Rows.Add(item.User.UserID, item.User.Username, item.User.Fullname, item.User.Phonenumber, books);
+            }
 
-
-             foreach (User user in userList)
-             {
-                 DgvTodaysRetuns.Rows.Add(user.UserID, user.Username, user.Fullname, user.Phonenumber);
-             }
- */
+         
         }
 
         private void BtnTodayR_Click(object sender, EventArgs e)
@@ -80,6 +92,26 @@ namespace LibraryManagement.Forms
             DgvTodaysRetuns.Visible = false;
             DgvTomorrow.Visible = false;
             DgvLate.Visible = true;
+        }
+
+        private void BtnPurchView_Click(object sender, EventArgs e)
+        {
+
+            //Interval
+            DateTime start = new DateTime();
+            DateTime end = new DateTime();
+            start = dateTimePickerStart.Value;
+            end = dateTimePickerEnd.Value;
+            AdminContext _adminContext=new AdminContext();
+
+            List<Purchase> purchasesList = new List<Purchase>();
+            purchasesList = _adminContext.Purchases.Include("Management").Where(p => p.BookReturnededDate > start && p.BookReturnededDate < end).ToList();
+            foreach (var item in purchasesList)
+            {
+            
+                
+                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money,"username", item.BookReturnededDate);
+            }
         }
     }
 }
