@@ -16,5 +16,12 @@ namespace LibraryManagement.Forms
         {
             InitializeComponent();
         }
+
+        private void BookCrudForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'libraryManagement01DataSet.Books' table. You can move, or remove it, as needed.
+            this.booksTableAdapter.Fill(this.libraryManagement01DataSet.Books);
+
+        }
     }
 }

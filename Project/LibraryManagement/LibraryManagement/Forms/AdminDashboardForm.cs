@@ -11,6 +11,8 @@ using LibraryManagement.Services;
 using LibraryManagement.DAL;
 using LibraryManagement.Models;
 using System.Collections;
+using System.IO;
+
 namespace LibraryManagement.Forms
 {
 
@@ -110,8 +112,78 @@ namespace LibraryManagement.Forms
             {
             
                 
-                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money,"username", item.BookReturnededDate);
+                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money,"usernamea", item.BookReturnededDate);
             }
+        }
+
+        private void AdminDashboardForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'libraryManagement01DataSet.Managements' table. You can move, or remove it, as needed.
+           // this.managementsTableAdapter.Fill(this.libraryManagement01DataSet.Managements);
+            // TODO: This line of code loads data into the 'libraryManagement01DataSet.Books' table. You can move, or remove it, as needed.
+           // this.booksTableAdapter.Fill(this.libraryManagement01DataSet.Books);
+
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            //Export to excel at selected location
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                
+                ToCsV(DgvExel, sfd.FileName); 
+            }
+
+        }
+
+        private void ToCsV(DataGridView dGV, string filename)
+        {
+            string stOutput = "";
+            // Export titles:
+            string sHeaders = "";
+
+            for (int j = 0; j < dGV.Columns.Count; j++)
+                sHeaders = sHeaders.ToString() + Convert.ToString(dGV.Columns[j].HeaderText) + "\t";
+            stOutput += sHeaders + "\r\n";
+            // Export data.
+            for (int i = 0; i < dGV.RowCount - 1; i++)
+            {
+                string stLine = "";
+                for (int j = 0; j < dGV.Rows[i].Cells.Count; j++)
+                    stLine = stLine.ToString() + Convert.ToString(dGV.Rows[i].Cells[j].Value) + "\t";
+                stOutput += stLine + "\r\n";
+            }
+
+            Encoding utf16 = Encoding.GetEncoding(1254);
+            byte[] output = utf16.GetBytes(stOutput);
+            FileStream fs = new FileStream(filename, FileMode.Create);
+            BinaryWriter bw = new BinaryWriter(fs);
+
+            bw.Write(output, 0, output.Length); //write the encoded file
+            bw.Flush();
+            bw.Close();
+            fs.Close();
+        }
+
+        private void BtnOpenAdminCrud_Click(object sender, EventArgs e)
+        {
+            AdminCrudForm adminCrudForm = new AdminCrudForm();
+            adminCrudForm.Show();
+        }
+
+        private void BtnOpenUserCrud_Click(object sender, EventArgs e)
+        {
+            UserCrudForm userCrudForm = new UserCrudForm();
+            userCrudForm.Show();
+        }
+
+        private void BtnOpenBookCrud_Click(object sender, EventArgs e)
+        {
+            BookCrudForm bookCrudForm = new BookCrudForm();
+            bookCrudForm.Show();
         }
     }
 }

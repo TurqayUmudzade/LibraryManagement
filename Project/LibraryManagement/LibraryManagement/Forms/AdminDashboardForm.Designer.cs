@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DgvTodaysRetuns = new System.Windows.Forms.DataGridView();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnTodayR = new System.Windows.Forms.Button();
             this.BtnTomorrow = new System.Windows.Forms.Button();
             this.BtnLate = new System.Windows.Forms.Button();
@@ -37,8 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnPurchView = new System.Windows.Forms.Button();
+            this.BtnExport = new System.Windows.Forms.Button();
             this.DgvExel = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,29 +52,40 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DgvTomorrow = new System.Windows.Forms.DataGridView();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DgvLate = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnPurchView = new System.Windows.Forms.Button();
+            this.libraryManagement01DataSet = new LibraryManagement.LibraryManagement01DataSet();
+            this.libraryManagement01DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.booksTableAdapter = new LibraryManagement.LibraryManagement01DataSetTableAdapters.BooksTableAdapter();
+            this.managementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.managementsTableAdapter = new LibraryManagement.LibraryManagement01DataSetTableAdapters.ManagementsTableAdapter();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnOpenAdminCrud = new System.Windows.Forms.Button();
+            this.BtnOpenUserCrud = new System.Windows.Forms.Button();
+            this.BtnOpenBookCrud = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managementsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvTodaysRetuns
@@ -87,6 +104,36 @@
             this.DgvTodaysRetuns.RowTemplate.Height = 24;
             this.DgvTodaysRetuns.Size = new System.Drawing.Size(692, 241);
             this.DgvTodaysRetuns.TabIndex = 0;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "UserID";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "UserName";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "User Full Name";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Phonenumber";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Books Owned";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
             // BtnTodayR
             // 
@@ -154,7 +201,7 @@
             // 
             this.groupBox1.Controls.Add(this.BtnPurchView);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BtnExport);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePickerEnd);
@@ -166,23 +213,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sales History";
             // 
-            // pictureBox1
+            // BtnPurchView
             // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.iconfinder_Excel_D_104853__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.BtnPurchView.Location = new System.Drawing.Point(6, 197);
+            this.BtnPurchView.Name = "BtnPurchView";
+            this.BtnPurchView.Size = new System.Drawing.Size(109, 46);
+            this.BtnPurchView.TabIndex = 13;
+            this.BtnPurchView.Text = "View Purchases";
+            this.BtnPurchView.UseVisualStyleBackColor = true;
+            this.BtnPurchView.Click += new System.EventHandler(this.BtnPurchView_Click);
             // 
-            // button1
+            // BtnExport
             // 
-            this.button1.Location = new System.Drawing.Point(6, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Export";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnExport.Location = new System.Drawing.Point(6, 261);
+            this.BtnExport.Name = "BtnExport";
+            this.BtnExport.Size = new System.Drawing.Size(109, 49);
+            this.BtnExport.TabIndex = 11;
+            this.BtnExport.Text = "Export";
+            this.BtnExport.UseVisualStyleBackColor = true;
+            this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
             // DgvExel
             // 
@@ -194,7 +243,7 @@
             this.Boo,
             this.Column7,
             this.Column8});
-            this.DgvExel.Location = new System.Drawing.Point(472, 403);
+            this.DgvExel.Location = new System.Drawing.Point(357, 371);
             this.DgvExel.Name = "DgvExel";
             this.DgvExel.RowHeadersWidth = 51;
             this.DgvExel.RowTemplate.Height = 24;
@@ -248,6 +297,36 @@
             this.DgvTomorrow.Size = new System.Drawing.Size(692, 241);
             this.DgvTomorrow.TabIndex = 11;
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "UserID";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "UserName";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "User Full Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Phonenumber";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Books Owned";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // DgvLate
             // 
             this.DgvLate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -295,81 +374,91 @@
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // Column10
+            // libraryManagement01DataSet
             // 
-            this.Column10.HeaderText = "UserID";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
+            this.libraryManagement01DataSet.DataSetName = "LibraryManagement01DataSet";
+            this.libraryManagement01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn1
+            // libraryManagement01DataSetBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "UserName";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.libraryManagement01DataSetBindingSource.DataSource = this.libraryManagement01DataSet;
+            this.libraryManagement01DataSetBindingSource.Position = 0;
             // 
-            // dataGridViewTextBoxColumn2
+            // booksBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "User Full Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.libraryManagement01DataSetBindingSource;
             // 
-            // dataGridViewTextBoxColumn3
+            // booksTableAdapter
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Phonenumber";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.booksTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // managementsBindingSource
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Books Owned";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.managementsBindingSource.DataMember = "Managements";
+            this.managementsBindingSource.DataSource = this.libraryManagement01DataSetBindingSource;
             // 
-            // Column11
+            // managementsTableAdapter
             // 
-            this.Column11.HeaderText = "UserID";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
+            this.managementsTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // pictureBox1
             // 
-            this.Column1.HeaderText = "UserName";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.iconfinder_Excel_D_104853__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
-            // Column2
+            // BtnOpenAdminCrud
             // 
-            this.Column2.HeaderText = "User Full Name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
+            this.BtnOpenAdminCrud.Location = new System.Drawing.Point(6, 32);
+            this.BtnOpenAdminCrud.Name = "BtnOpenAdminCrud";
+            this.BtnOpenAdminCrud.Size = new System.Drawing.Size(146, 33);
+            this.BtnOpenAdminCrud.TabIndex = 13;
+            this.BtnOpenAdminCrud.Text = "Edit Admins";
+            this.BtnOpenAdminCrud.UseVisualStyleBackColor = true;
+            this.BtnOpenAdminCrud.Click += new System.EventHandler(this.BtnOpenAdminCrud_Click);
             // 
-            // Column3
+            // BtnOpenUserCrud
             // 
-            this.Column3.HeaderText = "Phonenumber";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.BtnOpenUserCrud.Location = new System.Drawing.Point(6, 82);
+            this.BtnOpenUserCrud.Name = "BtnOpenUserCrud";
+            this.BtnOpenUserCrud.Size = new System.Drawing.Size(146, 33);
+            this.BtnOpenUserCrud.TabIndex = 14;
+            this.BtnOpenUserCrud.Text = "Edit Users";
+            this.BtnOpenUserCrud.UseVisualStyleBackColor = true;
+            this.BtnOpenUserCrud.Click += new System.EventHandler(this.BtnOpenUserCrud_Click);
             // 
-            // Column4
+            // BtnOpenBookCrud
             // 
-            this.Column4.HeaderText = "Books Owned";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
+            this.BtnOpenBookCrud.Location = new System.Drawing.Point(6, 136);
+            this.BtnOpenBookCrud.Name = "BtnOpenBookCrud";
+            this.BtnOpenBookCrud.Size = new System.Drawing.Size(146, 33);
+            this.BtnOpenBookCrud.TabIndex = 15;
+            this.BtnOpenBookCrud.Text = "Edit Books";
+            this.BtnOpenBookCrud.UseVisualStyleBackColor = true;
+            this.BtnOpenBookCrud.Click += new System.EventHandler(this.BtnOpenBookCrud_Click);
             // 
-            // BtnPurchView
+            // groupBox2
             // 
-            this.BtnPurchView.Location = new System.Drawing.Point(6, 197);
-            this.BtnPurchView.Name = "BtnPurchView";
-            this.BtnPurchView.Size = new System.Drawing.Size(109, 46);
-            this.BtnPurchView.TabIndex = 13;
-            this.BtnPurchView.Text = "View Purchases";
-            this.BtnPurchView.UseVisualStyleBackColor = true;
-            this.BtnPurchView.Click += new System.EventHandler(this.BtnPurchView_Click);
+            this.groupBox2.Controls.Add(this.BtnOpenAdminCrud);
+            this.groupBox2.Controls.Add(this.BtnOpenBookCrud);
+            this.groupBox2.Controls.Add(this.BtnOpenUserCrud);
+            this.groupBox2.Location = new System.Drawing.Point(1212, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(173, 208);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Options";
             // 
             // AdminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1397, 759);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DgvLate);
             this.Controls.Add(this.DgvTomorrow);
             this.Controls.Add(this.DgvExel);
@@ -380,13 +469,19 @@
             this.Controls.Add(this.DgvTodaysRetuns);
             this.Name = "AdminDashboardForm";
             this.Text = "AdminDashboardForm";
+            this.Load += new System.EventHandler(this.AdminDashboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managementsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -402,7 +497,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnExport;
         private System.Windows.Forms.DataGridView DgvExel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView DgvTomorrow;
@@ -428,5 +523,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button BtnPurchView;
+        private System.Windows.Forms.BindingSource libraryManagement01DataSetBindingSource;
+        private LibraryManagement01DataSet libraryManagement01DataSet;
+        private System.Windows.Forms.BindingSource booksBindingSource;
+        private LibraryManagement01DataSetTableAdapters.BooksTableAdapter booksTableAdapter;
+        private System.Windows.Forms.BindingSource managementsBindingSource;
+        private LibraryManagement01DataSetTableAdapters.ManagementsTableAdapter managementsTableAdapter;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button BtnOpenAdminCrud;
+        private System.Windows.Forms.Button BtnOpenUserCrud;
+        private System.Windows.Forms.Button BtnOpenBookCrud;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
