@@ -23,7 +23,7 @@ namespace LibraryManagement.Forms
 
             _adminContext = new AdminContext();
 
-            LblError.Visible = false;
+           
 
             TbUserID.Enabled = false;
             BtnAdd.Enabled = true;
@@ -40,7 +40,7 @@ namespace LibraryManagement.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (LblError.Visible==false) {
+            if (LblError.Visible==true) {
                 MessageBox.Show("Username Taken");
             }
             else { 
@@ -54,6 +54,7 @@ namespace LibraryManagement.Forms
             };
 
             _adminContext.Users.Add(user);
+                _adminContext.SaveChanges();
 
             this.usersTableAdapter.Fill(this.libraryManagement01DataSet.Users);
             }
@@ -96,7 +97,7 @@ namespace LibraryManagement.Forms
             BtnDelete.Enabled = true;
             BtnUpdate.Enabled = true;
 
-            _selectedUser = new User();
+           
             _selectedUser = _adminContext.Users.Find(DgvUserCrud.Rows[e.RowIndex].Cells[0].Value);
 
             TbUserID.Text = _selectedUser.UserID.ToString();

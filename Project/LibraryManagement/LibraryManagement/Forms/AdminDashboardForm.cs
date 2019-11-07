@@ -176,8 +176,8 @@ namespace LibraryManagement.Forms
 
         private void BtnOpenUserCrud_Click(object sender, EventArgs e)
         {
-         /*   UserCrudForm userCrudForm = new UserCrudForm();
-            userCrudForm.Show();*/
+            UserCrudForm userCrudForm = new UserCrudForm();
+            userCrudForm.Show();
         }
 
         private void BtnOpenBookCrud_Click(object sender, EventArgs e)

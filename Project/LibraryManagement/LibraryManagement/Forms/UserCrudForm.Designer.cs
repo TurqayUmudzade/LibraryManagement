@@ -252,9 +252,8 @@
             this.LblError.ForeColor = System.Drawing.Color.Red;
             this.LblError.Location = new System.Drawing.Point(68, 262);
             this.LblError.Name = "LblError";
-            this.LblError.Size = new System.Drawing.Size(35, 13);
+            this.LblError.Size = new System.Drawing.Size(0, 13);
             this.LblError.TabIndex = 14;
-            this.LblError.Text = "label6";
             // 
             // UserCrudForm
             // 

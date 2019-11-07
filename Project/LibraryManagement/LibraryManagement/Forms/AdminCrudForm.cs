@@ -45,7 +45,7 @@ namespace LibraryManagement.Forms
             BtnDelete.Enabled = true;
             BtnUpdate.Enabled = true;
 
-            _selectedAdmin = new Admin();
+           
             _selectedAdmin = _context.Admins.Find(DgvAdminCrud.Rows[e.RowIndex].Cells[0].Value);
 
             TbAdminID.Text = _selectedAdmin.AdminID.ToString();
