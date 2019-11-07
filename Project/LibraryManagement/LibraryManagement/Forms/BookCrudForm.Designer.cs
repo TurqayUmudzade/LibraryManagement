@@ -41,16 +41,16 @@
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.DgvBookCrud = new System.Windows.Forms.DataGridView();
-            this.libraryManagement01DataSet = new LibraryManagement.LibraryManagement01DataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new LibraryManagement.LibraryManagement01DataSetTableAdapters.BooksTableAdapter();
             this.bookIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookGenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryManagement01DataSet = new LibraryManagement.LibraryManagement01DataSet();
+            this.booksTableAdapter = new LibraryManagement.LibraryManagement01DataSetTableAdapters.BooksTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBookCrud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,6 +125,7 @@
             this.BtnAdd.TabIndex = 9;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnUpdate
             // 
@@ -134,6 +135,7 @@
             this.BtnUpdate.TabIndex = 10;
             this.BtnUpdate.Text = "Update";
             this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // BtnDelete
             // 
@@ -143,6 +145,7 @@
             this.BtnDelete.TabIndex = 11;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // DgvBookCrud
             // 
@@ -161,20 +164,7 @@
             this.DgvBookCrud.RowTemplate.Height = 24;
             this.DgvBookCrud.Size = new System.Drawing.Size(630, 440);
             this.DgvBookCrud.TabIndex = 12;
-            // 
-            // libraryManagement01DataSet
-            // 
-            this.libraryManagement01DataSet.DataSetName = "LibraryManagement01DataSet";
-            this.libraryManagement01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.libraryManagement01DataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
+            this.DgvBookCrud.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvBookCrud_RowHeaderMouseDoubleClick);
             // 
             // bookIDDataGridViewTextBoxColumn
             // 
@@ -205,6 +195,20 @@
             this.bookPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bookPriceDataGridViewTextBoxColumn.Name = "bookPriceDataGridViewTextBoxColumn";
             // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "Books";
+            this.booksBindingSource.DataSource = this.libraryManagement01DataSet;
+            // 
+            // libraryManagement01DataSet
+            // 
+            this.libraryManagement01DataSet.DataSetName = "LibraryManagement01DataSet";
+            this.libraryManagement01DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // booksTableAdapter
+            // 
+            this.booksTableAdapter.ClearBeforeFill = true;
+            // 
             // BookCrudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -226,8 +230,8 @@
             this.Text = "BookCrudForm";
             this.Load += new System.EventHandler(this.BookCrudForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvBookCrud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
