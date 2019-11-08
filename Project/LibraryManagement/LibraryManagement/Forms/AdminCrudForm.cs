@@ -42,6 +42,7 @@ namespace LibraryManagement.Forms
 
         private void DgvAdminCrud_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            BtnAdd.Enabled = false;
             BtnDelete.Enabled = true;
             BtnUpdate.Enabled = true;
 
@@ -84,6 +85,7 @@ namespace LibraryManagement.Forms
             _selectedAdmin.Username = TbAdminUsername.Text;
             _selectedAdmin.Password = TbAdminUsername.Text;
 
+            _context.Entry(_selectedAdmin).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
 
             BtnAdd.Enabled = true;

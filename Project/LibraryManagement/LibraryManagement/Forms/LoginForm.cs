@@ -78,5 +78,10 @@ namespace LibraryManagement
             }
            // MessageBox.Show("No user found");
         }
+
+        private void LoginUsernameTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            LoginUsernameTB.Text = "";
+        }
     }
 }

@@ -80,6 +80,8 @@ namespace LibraryManagement.Forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            
+
             _adminContext.Users.Remove(_selectedUser);
             _adminContext.SaveChanges();
 

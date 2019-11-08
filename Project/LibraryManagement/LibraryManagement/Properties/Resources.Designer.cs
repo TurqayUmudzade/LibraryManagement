@@ -63,6 +63,46 @@ namespace LibraryManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _392px_Google_Verified_Badge_svg {
+            get {
+                object obj = ResourceManager.GetObject("392px-Google_Verified_Badge.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _471px_Google__G__Logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("471px-Google__G__Logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _471px_Google__G__Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("471px-Google__G__Logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _480px_Google_Contacts_logo_vector_svg {
+            get {
+                object obj = ResourceManager.GetObject("480px-Google_Contacts_logo_vector.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Excel_D_256 {
             get {
                 object obj = ResourceManager.GetObject("Excel_D-256", resourceCulture);
