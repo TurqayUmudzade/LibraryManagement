@@ -40,7 +40,7 @@
             this.TbPrice = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TBOverall = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelOverallCost = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMyPurchaes)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // BtnPay
             // 
-            this.BtnPay.Location = new System.Drawing.Point(12, 227);
+            this.BtnPay.Location = new System.Drawing.Point(703, 241);
             this.BtnPay.Name = "BtnPay";
             this.BtnPay.Size = new System.Drawing.Size(85, 40);
             this.BtnPay.TabIndex = 1;
@@ -102,7 +102,7 @@
             // 
             // BtnConfirm
             // 
-            this.BtnConfirm.Location = new System.Drawing.Point(9, 389);
+            this.BtnConfirm.Location = new System.Drawing.Point(12, 352);
             this.BtnConfirm.Name = "BtnConfirm";
             this.BtnConfirm.Size = new System.Drawing.Size(88, 40);
             this.BtnConfirm.TabIndex = 2;
@@ -113,15 +113,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 323);
+            this.label1.Location = new System.Drawing.Point(9, 284);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Your Total Cost:";
+            this.label1.Text = "Your Cost:";
             // 
             // TbPrice
             // 
-            this.TbPrice.Location = new System.Drawing.Point(12, 352);
+            this.TbPrice.Location = new System.Drawing.Point(12, 313);
             this.TbPrice.Name = "TbPrice";
             this.TbPrice.Size = new System.Drawing.Size(138, 22);
             this.TbPrice.TabIndex = 4;
@@ -134,19 +134,19 @@
             // 
             // TBOverall
             // 
-            this.TBOverall.Location = new System.Drawing.Point(274, 245);
+            this.TBOverall.Location = new System.Drawing.Point(554, 261);
             this.TBOverall.Name = "TBOverall";
             this.TBOverall.Size = new System.Drawing.Size(138, 22);
             this.TBOverall.TabIndex = 6;
             // 
-            // label2
+            // labelOverallCost
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(153, 250);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Overall Cost:";
+            this.labelOverallCost.AutoSize = true;
+            this.labelOverallCost.Location = new System.Drawing.Point(551, 241);
+            this.labelOverallCost.Name = "labelOverallCost";
+            this.labelOverallCost.Size = new System.Drawing.Size(89, 17);
+            this.labelOverallCost.TabIndex = 7;
+            this.labelOverallCost.Text = "Overall Cost:";
             // 
             // button1
             // 
@@ -164,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelOverallCost);
             this.Controls.Add(this.TBOverall);
             this.Controls.Add(this.TbPrice);
             this.Controls.Add(this.label1);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.TextBox TbPrice;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox TBOverall;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelOverallCost;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -23,8 +23,6 @@ namespace LibraryManagement.Forms
 
             _adminContext = new AdminContext();
 
-           
-
             TbUserID.Enabled = false;
             BtnAdd.Enabled = true;
             BtnDelete.Enabled = false;
@@ -40,23 +38,25 @@ namespace LibraryManagement.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (LblError.Visible==true) {
+            if (LblError.Visible == true)
+            {
                 MessageBox.Show("Username Taken");
             }
-            else { 
-
-            User user = new User()
+            else
             {
-                Username = TbUsername.Text,
-                Password = TbPassword.Text,
-                Fullname = TbFullname.Text,
-                Phonenumber = TbPassword.Text
-            };
 
-            _adminContext.Users.Add(user);
+                User user = new User()
+                {
+                    Username = TbUsername.Text,
+                    Password = TbPassword.Text,
+                    Fullname = TbFullname.Text,
+                    Phonenumber = TbPassword.Text
+                };
+
+                _adminContext.Users.Add(user);
                 _adminContext.SaveChanges();
 
-            this.usersTableAdapter.Fill(this.libraryManagement01DataSet.Users);
+                this.usersTableAdapter.Fill(this.libraryManagement01DataSet.Users);
             }
         }
 
@@ -80,11 +80,9 @@ namespace LibraryManagement.Forms
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            
 
             _adminContext.Users.Remove(_selectedUser);
             _adminContext.SaveChanges();
-
 
             this.usersTableAdapter.Fill(this.libraryManagement01DataSet.Users);
 
@@ -95,13 +93,15 @@ namespace LibraryManagement.Forms
 
         private void DgvUserCrud_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Edit Buttons
             BtnAdd.Enabled = false;
             BtnDelete.Enabled = true;
             BtnUpdate.Enabled = true;
 
-           
+            //Find the user object
             _selectedUser = _adminContext.Users.Find(DgvUserCrud.Rows[e.RowIndex].Cells[0].Value);
 
+            //Edit the textboxes
             TbUserID.Text = _selectedUser.UserID.ToString();
             TbUsername.Text = _selectedUser.Username;
             TbFullname.Text = _selectedUser.Fullname;
@@ -112,9 +112,10 @@ namespace LibraryManagement.Forms
 
         }
 
+        //CAUSES AN ERROR
         private void TbUsername_TextChanged(object sender, EventArgs e)
         {
-            _adminContext = new AdminContext();
+            /*_adminContext = new AdminContext();
 
             LblError.Visible = false;
 
@@ -137,7 +138,7 @@ namespace LibraryManagement.Forms
                     LblError.Text = "Name taken by admin";
                     LblError.Visible = true;
                 }
-            }
+            }*/
 
         }
     }

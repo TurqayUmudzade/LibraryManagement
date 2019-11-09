@@ -112,6 +112,7 @@ namespace LibraryManagement.Forms
         {
             this.Hide();
             LoginForm loginForm = new LoginForm();
+            loginForm.Show();
 
         }
 

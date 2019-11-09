@@ -16,9 +16,9 @@ namespace LibraryManagement
 {
     public partial class LoginForm : Form
     {
-        //private readonly AdminServices _adminServices;
+
         private readonly AdminContext _adminContext;
-       // private User _selectedUser;
+        private bool LogedIn = false;
         public LoginForm()
         {
             InitializeComponent();
@@ -30,9 +30,15 @@ namespace LibraryManagement
 
         private void BTN_SignIn_Click(object sender, EventArgs e)
         {
+
             LoginAdmin(LoginUsernameTB.Text, LoginPasswordTb.Text);
             LoginUser(LoginUsernameTB.Text, LoginPasswordTb.Text);
-            
+            //if no one logged in
+            if (!LogedIn)
+            {
+                MessageBox.Show("Wrong Username or Password");
+            }
+
         }
 
         public void LoginAdmin(string username, string password)
@@ -42,17 +48,21 @@ namespace LibraryManagement
 
             foreach (Admin admin in adminList)
             {
+                //Check if the admin or user exists
                 if (username == admin.Username && password == admin.Password)
                 {
                     MessageBox.Show("Welcome Admin");
+                    LogedIn = true;
 
                     this.Hide();
+
                     AdminDashboardForm adminDashboard = new AdminDashboardForm();
                     adminDashboard.Show();
+
                     return;
                 }
             }
-            
+
 
         }
         public void LoginUser(string username, string password)
@@ -64,19 +74,17 @@ namespace LibraryManagement
             {
                 if (username == user.Username && password == user.Password)
                 {
-                    
-
                     MessageBox.Show("Welcome " + user.Fullname);
+                    LogedIn = true;
+
                     this.Hide();
 
                     BookStoreForm bookStore = new BookStoreForm(user.UserID);
                     bookStore.Show();
 
-
                     return;
                 }
             }
-           // MessageBox.Show("No user found");
         }
 
         private void LoginUsernameTB_MouseClick(object sender, MouseEventArgs e)

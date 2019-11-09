@@ -15,15 +15,15 @@ using System.Collections;
 namespace LibraryManagement.Forms
 {
     /*SELECT Managements.OrderID, Books.bookName, Managements.BookReturnDate,Managements.Money 
-                FROM Managements,Users,Books
-                WHERE Users.UserID = Managements.Username_UserID AND Books.bookID = Managements.Book_bookID*/
+     FROM Managements,Users,Books
+     WHERE Users.UserID = Managements.Username_UserID AND Books.bookID = Managements.Book_bookID*/
 
     /* SELECT Managements.OrderID, Managements.BookReturnDate,Managements.Money ,Books.bookName
      FROM Managements
      INNER JOIN Users
-  ON Users.UserID = Managements.Username_UserID
+      ON Users.UserID = Managements.Username_UserID
      INNER JOIN  Books
-  ON Books.bookID = Managements.Book_bookID*/
+      ON Books.bookID = Managements.Book_bookID*/
 
 
     public partial class ReturnsForm : Form
@@ -42,11 +42,12 @@ namespace LibraryManagement.Forms
 
             BtnConfirm.Enabled = false;
             TbPrice.ReadOnly = true;
-
-
+            labelOverallCost.Visible = false;
+            TBOverall.Visible = false;
 
 
             List<Management> testlist = new List<Management>();
+
             //Shows list of purchaes
             testlist = _adminContext.Managements.Include("User").Include("Book").Where(m => m.User.UserID == _selectedUser.UserID).Where(m => m.returned == false).ToList();
             foreach (var item in testlist)
@@ -59,6 +60,7 @@ namespace LibraryManagement.Forms
         {
             DateTime now = new DateTime();
             now = DateTime.Now;
+
             //if its late
             if (DateTime.Compare(returndate, now) < 0)
             {
@@ -78,9 +80,12 @@ namespace LibraryManagement.Forms
             _selectedRow = e.RowIndex;
         }
 
-        //Total Price to ReturnAll
+        //Its Sum button that shows the overall debt
         private void BtnPay_Click(object sender, EventArgs e)
         {
+
+            labelOverallCost.Visible = false;
+            TBOverall.Visible = false;
             float sum = 0;
             BtnConfirm.Enabled = true;
 
@@ -88,8 +93,10 @@ namespace LibraryManagement.Forms
             {
                 sum += Payment((DateTime)dr.Cells[3].Value, (float)dr.Cells[2].Value);
             }
+
             TBOverall.Text = sum.ToString();
         }
+
         //Confirm Return
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
@@ -106,12 +113,9 @@ namespace LibraryManagement.Forms
                 Management = management
             };
 
-
-
             _adminContext.Purchases.Add(purchase);
             management.returned = true;
             _adminContext.SaveChanges();
-
 
             MessageBox.Show("Purchase Completed");
 
@@ -119,6 +123,7 @@ namespace LibraryManagement.Forms
 
         }
 
+        //Back Button
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();

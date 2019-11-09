@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnPurchView = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnExport = new System.Windows.Forms.Button();
             this.DgvExel = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,13 +71,13 @@
             this.managementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.managementsTableAdapter = new LibraryManagement.LibraryManagement01DataSetTableAdapters.ManagementsTableAdapter();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnOpenAdminCrud = new System.Windows.Forms.Button();
             this.BtnOpenUserCrud = new System.Windows.Forms.Button();
             this.BtnOpenBookCrud = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).BeginInit();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managementsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@
             this.DgvTodaysRetuns.Name = "DgvTodaysRetuns";
             this.DgvTodaysRetuns.RowHeadersWidth = 51;
             this.DgvTodaysRetuns.RowTemplate.Height = 24;
-            this.DgvTodaysRetuns.Size = new System.Drawing.Size(692, 241);
+            this.DgvTodaysRetuns.Size = new System.Drawing.Size(950, 241);
             this.DgvTodaysRetuns.TabIndex = 0;
             // 
             // Column11
@@ -139,7 +139,7 @@
             // 
             this.BtnTodayR.Location = new System.Drawing.Point(21, 25);
             this.BtnTodayR.Name = "BtnTodayR";
-            this.BtnTodayR.Size = new System.Drawing.Size(186, 46);
+            this.BtnTodayR.Size = new System.Drawing.Size(226, 46);
             this.BtnTodayR.TabIndex = 1;
             this.BtnTodayR.Text = "Today\'s Returns";
             this.BtnTodayR.UseVisualStyleBackColor = true;
@@ -147,9 +147,9 @@
             // 
             // BtnTomorrow
             // 
-            this.BtnTomorrow.Location = new System.Drawing.Point(238, 25);
+            this.BtnTomorrow.Location = new System.Drawing.Point(368, 25);
             this.BtnTomorrow.Name = "BtnTomorrow";
-            this.BtnTomorrow.Size = new System.Drawing.Size(186, 46);
+            this.BtnTomorrow.Size = new System.Drawing.Size(237, 46);
             this.BtnTomorrow.TabIndex = 2;
             this.BtnTomorrow.Text = "Tomorrows\'s Returns";
             this.BtnTomorrow.UseVisualStyleBackColor = true;
@@ -157,9 +157,9 @@
             // 
             // BtnLate
             // 
-            this.BtnLate.Location = new System.Drawing.Point(447, 25);
+            this.BtnLate.Location = new System.Drawing.Point(725, 25);
             this.BtnLate.Name = "BtnLate";
-            this.BtnLate.Size = new System.Drawing.Size(186, 46);
+            this.BtnLate.Size = new System.Drawing.Size(237, 46);
             this.BtnLate.TabIndex = 3;
             this.BtnLate.Text = "Late Returns";
             this.BtnLate.UseVisualStyleBackColor = true;
@@ -222,6 +222,15 @@
             this.BtnPurchView.Text = "View Purchases";
             this.BtnPurchView.UseVisualStyleBackColor = true;
             this.BtnPurchView.Click += new System.EventHandler(this.BtnPurchView_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.iconfinder_Excel_D_104853__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // BtnExport
             // 
@@ -294,7 +303,7 @@
             this.DgvTomorrow.Name = "DgvTomorrow";
             this.DgvTomorrow.RowHeadersWidth = 51;
             this.DgvTomorrow.RowTemplate.Height = 24;
-            this.DgvTomorrow.Size = new System.Drawing.Size(692, 241);
+            this.DgvTomorrow.Size = new System.Drawing.Size(950, 241);
             this.DgvTomorrow.TabIndex = 11;
             // 
             // Column10
@@ -341,7 +350,7 @@
             this.DgvLate.Name = "DgvLate";
             this.DgvLate.RowHeadersWidth = 51;
             this.DgvLate.RowTemplate.Height = 24;
-            this.DgvLate.Size = new System.Drawing.Size(692, 241);
+            this.DgvLate.Size = new System.Drawing.Size(950, 241);
             this.DgvLate.TabIndex = 12;
             // 
             // Column9
@@ -402,15 +411,6 @@
             // 
             this.managementsTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagement.Properties.Resources.iconfinder_Excel_D_104853__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 49);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // BtnOpenAdminCrud
             // 
             this.BtnOpenAdminCrud.Location = new System.Drawing.Point(6, 32);
@@ -446,7 +446,7 @@
             this.groupBox2.Controls.Add(this.BtnOpenAdminCrud);
             this.groupBox2.Controls.Add(this.BtnOpenBookCrud);
             this.groupBox2.Controls.Add(this.BtnOpenUserCrud);
-            this.groupBox2.Location = new System.Drawing.Point(1212, 25);
+            this.groupBox2.Location = new System.Drawing.Point(1055, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(173, 208);
             this.groupBox2.TabIndex = 16;
@@ -457,7 +457,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 759);
+            this.ClientSize = new System.Drawing.Size(1246, 759);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DgvLate);
             this.Controls.Add(this.DgvTomorrow);
@@ -473,6 +473,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvExel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTomorrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLate)).EndInit();
@@ -480,7 +481,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.libraryManagement01DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.managementsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 

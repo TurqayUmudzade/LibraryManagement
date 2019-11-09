@@ -24,7 +24,7 @@ namespace LibraryManagement.Forms
 
             _context = new AdminContext();
 
-
+            //Buttons and Design
             LblError.Visible = false;
             LblError.ForeColor = Color.Red;
 
@@ -57,6 +57,7 @@ namespace LibraryManagement.Forms
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            //Checks if username is taken
             if (LblError.Visible == true)
             {
                 MessageBox.Show("Username Taken");
@@ -81,10 +82,12 @@ namespace LibraryManagement.Forms
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            //Update
             _selectedAdmin.Fullname = TbAdminFullname.Text;
             _selectedAdmin.Username = TbAdminUsername.Text;
-            _selectedAdmin.Password = TbAdminUsername.Text;
+            _selectedAdmin.Password = TbAdminPassword.Text;
 
+            //Save
             _context.Entry(_selectedAdmin).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
 
@@ -108,7 +111,7 @@ namespace LibraryManagement.Forms
 
         private void TbAdminUsername_TextChanged(object sender, EventArgs e)
         {
-            _context = new AdminContext();
+            /*_context = new AdminContext();
 
             LblError.Visible = false;
 
@@ -131,7 +134,7 @@ namespace LibraryManagement.Forms
                     LblError.Text = "Name taken by admin";
                     LblError.Visible = true;
                 }
-            }
+            }*/
         }
     }
 }

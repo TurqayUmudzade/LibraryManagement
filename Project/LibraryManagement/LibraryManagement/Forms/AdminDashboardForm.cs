@@ -18,16 +18,17 @@ namespace LibraryManagement.Forms
 
     public partial class AdminDashboardForm : Form
     {
-        private readonly AdminContext _adminContext;
+        private  AdminContext _adminContext;
         public AdminDashboardForm()
         {
             InitializeComponent();
 
-            AdminContext _adminContext = new AdminContext();
+             _adminContext = new AdminContext();
 
             DgvTodaysRetuns.Visible = true;
             DgvTomorrow.Visible = false;
             DgvLate.Visible = false;
+
             //Today
             DateTime today = new DateTime();
             today = DateTime.Today;
@@ -72,7 +73,7 @@ namespace LibraryManagement.Forms
                 DgvLate.Rows.Add(item.User.UserID, item.User.Username, item.User.Fullname, item.User.Phonenumber, books);
             }
 
-         
+
         }
 
         private void BtnTodayR_Click(object sender, EventArgs e)
@@ -100,28 +101,31 @@ namespace LibraryManagement.Forms
         {
 
             //Interval
+
             DateTime start = new DateTime();
-            DateTime end = new DateTime();
             start = dateTimePickerStart.Value;
+
+            DateTime end = new DateTime();
             end = dateTimePickerEnd.Value;
-            AdminContext _adminContext=new AdminContext();
+
+             _adminContext = new AdminContext();
 
             List<Purchase> purchasesList = new List<Purchase>();
+
             purchasesList = _adminContext.Purchases.Include("Management").Where(p => p.BookReturnededDate > start && p.BookReturnededDate < end).ToList();
+
             foreach (var item in purchasesList)
             {
-            
-                
-                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money,"usernamea", item.BookReturnededDate);
+                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money, "usernamea", item.BookReturnededDate);
             }
         }
 
         private void AdminDashboardForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'libraryManagement01DataSet.Managements' table. You can move, or remove it, as needed.
-           // this.managementsTableAdapter.Fill(this.libraryManagement01DataSet.Managements);
+            // this.managementsTableAdapter.Fill(this.libraryManagement01DataSet.Managements);
             // TODO: This line of code loads data into the 'libraryManagement01DataSet.Books' table. You can move, or remove it, as needed.
-           // this.booksTableAdapter.Fill(this.libraryManagement01DataSet.Books);
+            // this.booksTableAdapter.Fill(this.libraryManagement01DataSet.Books);
 
         }
 
@@ -133,12 +137,13 @@ namespace LibraryManagement.Forms
             sfd.FileName = "export.xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                
-                ToCsV(DgvExel, sfd.FileName); 
+
+                ToCsV(DgvExel, sfd.FileName);
             }
 
         }
 
+        //Make en excel file
         private void ToCsV(DataGridView dGV, string filename)
         {
             string stOutput = "";
@@ -168,6 +173,8 @@ namespace LibraryManagement.Forms
             fs.Close();
         }
 
+
+        //Crud Menue
         private void BtnOpenAdminCrud_Click(object sender, EventArgs e)
         {
             AdminCrudForm adminCrudForm = new AdminCrudForm();

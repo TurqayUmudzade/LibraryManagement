@@ -33,6 +33,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.returnDateLabel = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.BtnConfirm = new System.Windows.Forms.Button();
             this.Your = new System.Windows.Forms.Label();
             this.DgvCart = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +97,12 @@
             this.Column2.HeaderText = "Genre";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Price";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
             // 
             // label1
             // 
@@ -172,12 +178,6 @@
             this.DgvCart.Size = new System.Drawing.Size(382, 170);
             this.DgvCart.TabIndex = 10;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Price";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "bookID";
@@ -213,9 +213,9 @@
             // 
             // BtnSignOut
             // 
-            this.BtnSignOut.Location = new System.Drawing.Point(977, 112);
+            this.BtnSignOut.Location = new System.Drawing.Point(720, 33);
             this.BtnSignOut.Name = "BtnSignOut";
-            this.BtnSignOut.Size = new System.Drawing.Size(100, 36);
+            this.BtnSignOut.Size = new System.Drawing.Size(121, 53);
             this.BtnSignOut.TabIndex = 12;
             this.BtnSignOut.Text = "Sign Out";
             this.BtnSignOut.UseVisualStyleBackColor = true;
@@ -223,9 +223,9 @@
             // 
             // BtnReturnBooks
             // 
-            this.BtnReturnBooks.Location = new System.Drawing.Point(977, 176);
+            this.BtnReturnBooks.Location = new System.Drawing.Point(720, 97);
             this.BtnReturnBooks.Name = "BtnReturnBooks";
-            this.BtnReturnBooks.Size = new System.Drawing.Size(100, 41);
+            this.BtnReturnBooks.Size = new System.Drawing.Size(121, 58);
             this.BtnReturnBooks.TabIndex = 13;
             this.BtnReturnBooks.Text = "ReturnBooks";
             this.BtnReturnBooks.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 525);
+            this.ClientSize = new System.Drawing.Size(878, 525);
             this.Controls.Add(this.BtnReturnBooks);
             this.Controls.Add(this.BtnSignOut);
             this.Controls.Add(this.UsernameLabel);
