@@ -47,11 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnExport = new System.Windows.Forms.Button();
             this.DgvExel = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Boo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DgvTomorrow = new System.Windows.Forms.DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +70,9 @@
             this.BtnOpenUserCrud = new System.Windows.Forms.Button();
             this.BtnOpenBookCrud = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTodaysRetuns)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -248,9 +246,7 @@
             this.DgvExel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvExel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
-            this.Column6,
             this.Boo,
-            this.Column7,
             this.Column8});
             this.DgvExel.Location = new System.Drawing.Point(357, 371);
             this.DgvExel.Name = "DgvExel";
@@ -258,36 +254,6 @@
             this.DgvExel.RowTemplate.Height = 24;
             this.DgvExel.Size = new System.Drawing.Size(605, 344);
             this.DgvExel.TabIndex = 10;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "OrderID";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Book";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Boo
-            // 
-            this.Boo.HeaderText = "Price";
-            this.Boo.MinimumWidth = 6;
-            this.Boo.Name = "Boo";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Username";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Date";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
             // 
             // DgvTomorrow
             // 
@@ -453,6 +419,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "OrderID";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Boo
+            // 
+            this.Boo.HeaderText = "Money";
+            this.Boo.MinimumWidth = 6;
+            this.Boo.Name = "Boo";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Date";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
             // AdminDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,11 +486,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView DgvTomorrow;
         private System.Windows.Forms.DataGridView DgvLate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Boo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -534,5 +513,8 @@
         private System.Windows.Forms.Button BtnOpenUserCrud;
         private System.Windows.Forms.Button BtnOpenBookCrud;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Boo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

@@ -76,6 +76,7 @@ namespace LibraryManagement.Forms
 
         }
 
+        //Shows Selected DataGrids based on time
         private void BtnTodayR_Click(object sender, EventArgs e)
         {
             DgvTodaysRetuns.Visible = true;
@@ -116,7 +117,7 @@ namespace LibraryManagement.Forms
 
             foreach (var item in purchasesList)
             {
-                DgvExel.Rows.Add(item.PurchaseID, "item.Management.Book.bookName", item.Money, "usernamea", item.BookReturnededDate);
+                DgvExel.Rows.Add(item.PurchaseID, item.Money, item.BookReturnededDate);
             }
         }
 
